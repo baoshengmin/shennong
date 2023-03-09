@@ -4,6 +4,7 @@ import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.fubai.shennong.activity.FlashSaleService;
 import com.fubai.shennong.activity.dao.PdStoreMapper;
 import com.fubai.shennong.activity.po.PdStore;
+import com.fubai.shennong.activity.util.RedissonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,15 +23,24 @@ public class FlashSaleServiceImpl implements FlashSaleService {
     private int stock;
 
     @Autowired
+    private RedissonUtil redissonUtil;
+    @Autowired
     private PdStoreMapper pdStoreMapper;
 
     @SentinelResource(value = "flashSale",fallback = "flashSaleFallback")
     @Override
     public String flashSale() {
         try{
+            Integer stockData = stock;
+            if(!redissonUtil.hasString("flashSale")){
+                redissonUtil.setString("flashSale",stock);
+            } else {
+                stockData = Integer.parseInt(String.valueOf(redissonUtil.decr("flashSale")));
+            }
+
             PdStore pdStore = new PdStore();
             pdStore.setProductId(productId);
-            pdStore.setNum(stock);
+            pdStore.setNum(stockData);
             pdStoreMapper.insert(pdStore);
         }catch (Exception e){
             log.error(e.getMessage(),e);

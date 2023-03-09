@@ -1,0 +1,31 @@
+server:
+  port: 50002
+  servlet:
+    context-path: /portal
+
+spring:
+  application:
+    name: sn-portal
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 182.92.155.236:8848
+        namespace: shennong
+      config:
+        server-addr: 182.92.155.236:8848 # 配置中心地址
+        file-extension: yaml
+        namespace: shennong
+        group: dev
+
+dubbo:
+  scan:
+    base-packages: com.fubai.shennong
+  protocol:
+    name: dubbo
+    port: 20891
+  registry:
+    address: nacos://182.92.155.236:8848
+  application:
+    qos-enable: false
+  consumer:
+    check: false
