@@ -1,0 +1,42 @@
+server:
+  port: 50003
+
+spring:
+  application:
+    name: sn-activity
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 182.92.155.236:8848
+        namespace: shennong
+      config:
+        server-addr: 182.92.155.236:8848 # 配置中心地址
+        file-extension: yaml
+        namespace: shennong
+        group: dev
+        ext-config[0]:
+          data-id: datasource.yml
+          group: dev
+          refresh: true
+        ext-config[1]:
+          data-id: baseconfig.yml
+          group: dev
+          refresh: true
+        enabled: true
+    sentinel:
+      transport:
+        dashboard: 182.92.155.236:8080
+      eager: true
+
+dubbo:
+  scan:
+    base-packages: com.fubai.shennong
+  protocol:
+    name: dubbo
+    port: 20881
+  registry:
+    address: nacos://182.92.155.236:8848
+  application:
+    qos-enable: false
+  consumer:
+    check: false

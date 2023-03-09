@@ -1,0 +1,30 @@
+server:
+  port: 50001
+spring:
+  application:
+    name: sn-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 182.92.155.236:8848
+        namespace: shennong
+      config:
+        server-addr: 182.92.155.236:8848 # 配置中心地址
+        file-extension: yaml
+        namespace: shennong
+        group: dev
+    gateway:
+      routes:
+        - id: portal_route
+          uri: lb://sn-portal/
+          predicates:
+            - Path=/**
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowedCredentials: true #是否允许携带cookie
+            maxAge: 36000
