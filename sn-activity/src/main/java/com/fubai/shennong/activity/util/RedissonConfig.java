@@ -10,20 +10,20 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RedissonConfig {
 
-    @Value("${spring.redis.host}")
-    private String host;
+//    @Value("${spring.redis.host}")
+//    private String host;
 
-    @Value("${spring.redis.port}")
-    private String port;
+//    @Value("${spring.redis.port}")
+//    private String port;
 
-    @Bean
-    public RedissonClient getRedisson(){
-
-        Config config = new Config();
-        //单机模式  依次设置redis地址和密码
-        config.useSingleServer().
-                setAddress("redis://" + host + ":" + port);
-        return Redisson.create(config);
-    }
+//    @Bean
+//    public RedissonClient getRedisson(){
+//
+//        Config config = new Config();
+//        //单机模式  依次设置redis地址和密码
+//        config.useSingleServer().
+//                setAddress("redis://" + host + ":" + port);
+//        return Redisson.create(config);
+//    }
 
 }

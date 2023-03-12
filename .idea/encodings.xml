@@ -3,6 +3,7 @@
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="GBK">
     <file url="file://$PROJECT_DIR$/sn-activity/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sn-activity/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sn-activity/src/main/resources/mapper/SnNewsMapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sn-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sn-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sn-integration-api/src/main/java" charset="UTF-8" />

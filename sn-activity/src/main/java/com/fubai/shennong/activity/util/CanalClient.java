@@ -20,7 +20,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 @Component
 public class CanalClient {
-    private Queue<String> SQL_QUEUE = new ConcurrentLinkedQueue<>();
+   /* private Queue<String> SQL_QUEUE = new ConcurrentLinkedQueue<>();
     @Resource
     private DataSource dataSource;
 
@@ -174,7 +174,7 @@ public class CanalClient {
         } finally {
             DbUtils.closeQuietly(con);
         }
-    }
+    }*/
 
 }
 

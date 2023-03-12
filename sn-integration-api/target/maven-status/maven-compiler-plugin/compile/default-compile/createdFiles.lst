@@ -1,0 +1,5 @@
+com/fubai/shennong/common/SnResponseEnum.class
+com/fubai/shennong/news/dto/SnNewsDTO.class
+com/fubai/shennong/news/SnNewsService.class
+com/fubai/shennong/common/SnResponseBuilder.class
+com/fubai/shennong/common/SnResponse.class

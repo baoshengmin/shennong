@@ -22,8 +22,8 @@ public class FlashSaleServiceImpl implements FlashSaleService {
     @Value("${stock}")
     private int stock;
 
-    @Autowired
-    private RedissonUtil redissonUtil;
+//    @Autowired
+//    private RedissonUtil redissonUtil;
     @Autowired
     private PdStoreMapper pdStoreMapper;
 
@@ -32,11 +32,11 @@ public class FlashSaleServiceImpl implements FlashSaleService {
     public String flashSale() {
         try{
             Integer stockData = stock;
-            if(!redissonUtil.hasString("flashSale")){
-                redissonUtil.setString("flashSale",stock);
-            } else {
-                stockData = Integer.parseInt(String.valueOf(redissonUtil.decr("flashSale")));
-            }
+//            if(!redissonUtil.hasString("flashSale")){
+//                redissonUtil.setString("flashSale",stock);
+//            } else {
+//                stockData = Integer.parseInt(String.valueOf(redissonUtil.decr("flashSale")));
+//            }
 
             PdStore pdStore = new PdStore();
             pdStore.setProductId(productId);

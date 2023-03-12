@@ -1,0 +1,5 @@
+com/fubai/shennong/activity/dao/SnNewsMapper.class
+com/fubai/shennong/activity/service/SnNewsServiceImpl.class
+com/fubai/shennong/activity/po/SnNews.class
+com/fubai/shennong/activity/dao/SnNewsDetailMapper.class
+com/fubai/shennong/activity/po/SnNewsDetail.class

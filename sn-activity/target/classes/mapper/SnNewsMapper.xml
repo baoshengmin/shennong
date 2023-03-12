@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fubai.shennong.activity.dao.SnNewsMapper">
+
+  <insert id="insert4Id" parameterType="com.fubai.shennong.activity.po.SnNews" useGeneratedKeys="true" keyProperty="id">
+     insert into sn_news(type,title,pv) values (#{type},#{title},#{pv})
+  </insert>
+
+  <select id="selectHotList" resultType="com.fubai.shennong.news.dto.SnNewsDTO">
+    select * from sn_news order by pv desc limit 10
+  </select>
+
+  <select id="selectList" resultType="com.fubai.shennong.news.dto.SnNewsDTO" parameterType="com.fubai.shennong.news.dto.SnNewsDTO">
+    select * from sn_news where type=#{type} order by news_time desc limit 10
+  </select>
+
+</mapper>

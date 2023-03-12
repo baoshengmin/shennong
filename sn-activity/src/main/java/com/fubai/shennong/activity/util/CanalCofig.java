@@ -7,10 +7,12 @@ import javax.annotation.Resource;
 
 @Configuration
 public class CanalCofig implements CommandLineRunner {
-    @Resource
-    private CanalClient canalClient;
+
+    /*@Resource
+    private CanalClient canalClient;*/
+
     @Override
     public void run(String... args) throws Exception {
-        canalClient.handleMessages();
+//        canalClient.handleMessages();
     }
 }
