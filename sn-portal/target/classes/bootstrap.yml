@@ -1,7 +1,7 @@
 server:
   port: 50002
   servlet:
-    context-path: /portal
+    context-path: /
 
 spring:
   application:
