@@ -16,11 +16,11 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 @RefreshScope
 public class FlashSaleServiceImpl implements FlashSaleService {
 
-    @Value("${productId}")
-    private int productId;
+//    @Value("${productId}")
+    private int productId=0;
 
-    @Value("${stock}")
-    private int stock;
+//    @Value("${stock}")
+    private int stock=0;
 
 //    @Autowired
 //    private RedissonUtil redissonUtil;

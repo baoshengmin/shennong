@@ -1,5 +1,6 @@
 package com.fubai.shennong.news.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,5 +17,6 @@ public class SnNewsDTO implements Serializable {
     private String contactMobile;
     private String contactAddr;
     private String remark;
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
     private Date newsTime;
 }
