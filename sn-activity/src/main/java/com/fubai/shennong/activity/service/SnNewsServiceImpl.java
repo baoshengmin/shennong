@@ -52,6 +52,8 @@ public class SnNewsServiceImpl implements SnNewsService {
         if(null == snNews){
             return null;
         }
+        snNews.setPv(snNews.getPv()+1);
+        snNewsMapper.updateById(snNews);
         QueryWrapper<SnNewsDetail> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("news_id", snNews.getId());
         SnNewsDetail snNewsDetail = snNewsDetailMapper.selectOne(queryWrapper);

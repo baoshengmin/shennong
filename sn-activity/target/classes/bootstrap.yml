@@ -28,6 +28,15 @@ spring:
         dashboard: 182.92.155.236:8080
       eager: true
 
+  # 数据源配置
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.1.118:3306/shennong?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&allowMultiQueries=true&useOldAliasMetadataBehavior=true&autoReconnect=true&failOverReadOnly=false
+
+
 dubbo:
   scan:
     base-packages: com.fubai.shennong
